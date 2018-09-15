@@ -13,10 +13,9 @@ will work with).
 ### HOW TO INSTALL  
 `git clone https://github.com/drvladbancila/turing`  
 `cd turing`  
-`chmod +x configure`  
-`./configure`  
-`make`  
-`make install` 
+`chmod +x ./install.sh`  
+`./install.sh`  
+`turing` 
 
 ### These are the OPERATION CODES:
 ```
