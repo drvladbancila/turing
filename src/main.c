@@ -2,6 +2,7 @@
 
 #ifdef linux
     #define CLEAR_STRING "clear"
+    #define BANNER_PATH "/usr/bin/turing/banner"
 #endif
 
 #ifdef _WIN32
@@ -20,14 +21,14 @@ int welcome(void)
     FILE *bannerf;
     char str[BANNER];
 
-    if ((bannerf = fopen("banner", "r")) == NULL) {
+    if ((bannerf = fopen(BANNER_PATH, "r")) == NULL) {
         fprintf(stderr, "[%s*%s] Can't open banner file.\n",
                 RED, NORMAL);
         return 1;
     }
 
     system(CLEAR_STRING);
-
+    
     // read every line from the banner file and print it on screen
     while (fgets(str, sizeof(str), bannerf) != NULL) {
         printf("\t%s%s%s", GREEN, str, NORMAL);
