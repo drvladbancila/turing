@@ -51,6 +51,3 @@ HALT -> end the execution
 ```
 You can find some program examples in the 'examples' folder.  
 That's it.  
-
-### Demo
-![alt text](https://media.giphy.com/media/5hxtXL3nQtTTREJUTI/giphy.gif)
