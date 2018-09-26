@@ -10,7 +10,7 @@ where the first two digits are the operation code and the last
 two digits are the operand (the memory cell which the instruction  
 will work with).  
 
-### HOW TO INSTALL  
+### How to install
 `git clone https://github.com/drvladbancila/turing`  
 `cd turing`  
 `chmod +x ./install.sh`  
@@ -49,7 +49,8 @@ JUMPNEG instead of BRANCHNEG
 JUMPZERO instead of BRANCHZERO  
 HALT -> end the execution  
 ```
+You can find some program examples in the 'examples' folder.  
+That's it.  
 
-You can find some program examples in the 'examples' folder.
-
-That's it.
+### Demo
+![alt text](https://media.giphy.com/media/5hxtXL3nQtTTREJUTI/giphy.gif)
