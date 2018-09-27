@@ -2,7 +2,6 @@
 
 #ifdef linux
     #define CLEAR_STRING "clear"
-    #define BANNER_PATH "/usr/bin/turing/banner"
 #endif
 
 #ifdef _WIN32
@@ -14,33 +13,31 @@
 
 // Versioning
 #define MAJOR 2
-#define MINOR 0
+#define MINOR 1
 
-int welcome(void)
+void welcome(void)
 {
     FILE *bannerf;
     char str[BANNER];
 
-    if ((bannerf = fopen(BANNER_PATH, "r")) == NULL) {
-        fprintf(stderr, "[%s*%s] Can't open banner file.\n",
-                RED, NORMAL);
-        return 1;
-    }
-
     system(CLEAR_STRING);
     
-    // read every line from the banner file and print it on screen
-    while (fgets(str, sizeof(str), bannerf) != NULL) {
-        printf("\t%s%s%s", GREEN, str, NORMAL);
+    if ((bannerf = fopen("banner", "r")) == NULL) {
+        fprintf(stderr, "[%s*%s] Can't open banner file.\n",
+                RED, NORMAL);
+    } else {
+        // read every line from the banner file and print it on screen
+        while (fgets(str, sizeof(str), bannerf) != NULL) {
+            printf("\t%s%s%s", GREEN, str, NORMAL);
+        }
+
+        fclose(bannerf);
     }
 
-    fclose(bannerf);
-
     printf("Please enter your program one instruction\n"
-        "at a time. Type -99999 to stop entering\n"
-        "your program. Type 99999 to exit.\n");
+        "at a time. Type %d to stop entering\n"
+        "your program. Type %d to exit.\n", SENT, EXIT_CODE);
 
-    return 0;
 }
 
 void usage(void)
@@ -71,7 +68,7 @@ int main(int argc, char *argv[])
     int dump_mode = 0;
     int file_mode = 0;
     int no_file = 0;
-    int file_position = 2;
+    int file_position = 2; // the file is specified as the 2nd argument (unless there are more flags)
     int exit_condition = 0;
     
     // if not enough arguments are given, print usage
@@ -104,10 +101,7 @@ int main(int argc, char *argv[])
     }
     
     if (!file_mode) {   // live mode activated
-        if (welcome() == 1) {
-            return (EXIT_FAILURE);
-        }
-        
+        welcome();
         while (exit_condition != EXIT_CODE) {
             free_memory(memory, MAXMEM, &registers);
             exit_condition = input(memory, MAXMEM, &registers);
@@ -122,7 +116,9 @@ int main(int argc, char *argv[])
                 continue;
             }
         }
+
     } else {    // file mode activated
+
         if (dump_mode && argc != 4) {
             no_file = 1;
         }
@@ -139,7 +135,7 @@ int main(int argc, char *argv[])
             exit_condition = file_input(memory, MAXMEM, argv[file_position], &registers); // argv[2] is the file name
 
             if (exit_condition == EXIT_CODE) {
-                return (EXIT_FAILURE);
+                return (EXIT_SUCCESS);
             } else {
                 run(memory, MAXMEM, &registers);
             }

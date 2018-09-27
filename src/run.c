@@ -136,20 +136,24 @@ void dump(int *memory, int size, reg_t *r)
 
     printf("%3c", ' ');
     for (i = 0; i < 10; i++) {
-        printf("% 6d", i);  // print the 'coordinates'
+        printf("%s% 6d%s", YELLOW, i, NORMAL);  // print the 'coordinates'
     }
     printf("\n");
 
     for (i = 1; i <= size; i++) {
         if (i == 1) {
-            printf("% 2d  ", i);
+            printf("%s% 2d  %s", YELLOW, i, NORMAL);
         }
 
-        printf("%+05d ", memory[i - 1]);
+        if (memory[i - 1] != 0) {
+            printf("%s%+05d %s", GREEN, memory[i - 1], NORMAL);
+        } else {
+            printf("%+05d ", memory[i - 1]);
+        }
 
         if (i % 10 == 0 && i != MAXMEM) {
             printf("\n");
-            printf("% 2d ", i);
+            printf("%s% 2d %s", YELLOW, i, NORMAL);
         }
     }
     printf("\n");

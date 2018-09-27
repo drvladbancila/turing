@@ -4,8 +4,8 @@ int input(int *memory, int size, reg_t *r)
 {
     int tmp;
 
-    
     printf("\n");
+
     while (r->ic < size) {  // while there is still free memory
         printf("%s%02d%s > ", GREEN, r->ic, NORMAL); // print current instruction counter
 
@@ -15,6 +15,7 @@ int input(int *memory, int size, reg_t *r)
         }
 
         // if the sentinel value is typed, stop accepting inputs
+        // this will give control to the main function
         if (r->ir == SENT) {
             break;
         }
@@ -53,7 +54,6 @@ int input(int *memory, int size, reg_t *r)
             error(INVALID_OP);
             continue;
         }
-
     }
 }
 

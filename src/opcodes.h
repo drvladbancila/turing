@@ -17,5 +17,5 @@
 #define BRANCHNEG 41
 #define BRANCHZERO 42
 #define HALT 43
-#define SENT -99999
-#define EXIT_CODE 99999
+#define SENT 99999
+#define EXIT_CODE -99999
