@@ -1,10 +1,11 @@
 # turing
 ## Abstract machine simulator 
-
+![demo picture](https://github.com/drvladbancila/turing/blob/master/turingdemo.png)
 This software lets you simulate a small computer with 100 cells of memory and three registers:  
 * Instruction Register (IR): holds the instruction currently being decoded and executed.  
 * Instruction Counter (IC): keeps track of the address of the memory cell that the IR is decoding.  
 * Accumulator (ACC): it stores intermediate arithmetic results (that can be later saved on memory).  
+
 You will be asked to enter the program one instruction at a time. The format of each word (instruction) must be:  
   `XXXX`  
 where the first two digits are the "operation code" and the last two digits are the operand (the memory cell that the instruction will work with).  
