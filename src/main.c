@@ -10,6 +10,7 @@
 
 // Others
 #define BANNER 32
+#define BANNER_PATH "/usr/bin/turing/banner"
 
 // Versioning
 #define MAJOR 2
@@ -22,7 +23,7 @@ void welcome(void)
 
     system(CLEAR_STRING);
     
-    if ((bannerf = fopen("banner", "r")) == NULL) {
+    if ((bannerf = fopen(BANNER_PATH, "r")) == NULL) {
         fprintf(stderr, "[%s*%s] Can't open banner file.\n",
                 RED, NORMAL);
     } else {
