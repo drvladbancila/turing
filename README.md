@@ -59,3 +59,5 @@ HALT        -> ends the execution
 ```
 You can find some program examples in the 'examples' folder.  
 That's it.  
+
+Images above generated with the wonderful [cool-retro-terminal](https://github.com/Swordfish90/cool-retro-term) by Swordfish90.
