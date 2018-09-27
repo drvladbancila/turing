@@ -34,6 +34,7 @@ where the first two digits are the "operation code" and the last two digits are 
 99999         -> sentinel value, makes turing stop taking inputs  
 -99999        -> quit turing  
 ```
+![demo picture](https://github.com/drvladbancila/turing/blob/master/turingdemo1.png)
 
 ### Run program from file  
 If you write a program on a file, you can run it in this way:  
