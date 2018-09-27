@@ -39,8 +39,8 @@ where the first two digits are the "operation code" and the last two digits are 
 ### Run program from file  
 If you write a program on a file, you can run it in this way:  
 `turing -f <file_name> [-d]`  
-substituting `<file_name>` with your actual file. Remember that the file must contain valid instructions (see the next paragraph for the syntax of turing language) otherwise you will be prompted with syntax errors.  
-The -d flag tells the program to dump the memory on screen after the execution is over (optional).  
+substituting `<file_name>` with your actual file. Remember that the file must contain valid instructions (see the next paragraph for the syntax of the turing language) otherwise you will be prompted with syntax errors.  
+The `-d` flag tells the program to dump the memory on screen after the execution is over (optional).  
 
 ### The syntax of the TURING LANGUAGE is the following:  
 ```
@@ -57,7 +57,7 @@ JUMPNEG XX  -> works like BRANCHNEG (see above)
 JUMPZERO XX -> works like BRANCHZERO (see above)  
 HALT        -> ends the execution  
 ```
-You can find some program examples in the 'examples' folder.  
+You can find some program examples in the "examples" folder.  
 That's it.  
 
 Images above generated with the wonderful [cool-retro-terminal](https://github.com/Swordfish90/cool-retro-term) by Swordfish90.
