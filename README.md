@@ -1,6 +1,6 @@
 # turing
 ## Abstract machine simulator 
-![demo picture](https://github.com/drvladbancila/turing/blob/master/turingdemo.png)
+![demo picture](turingdemo.png)
 This software lets you simulate a small computer with 100 cells of memory and three registers:  
 * Instruction Register (IR): holds the instruction currently being decoded and executed.  
 * Instruction Counter (IC): keeps track of the address of the memory cell that the IR is decoding.  
@@ -34,7 +34,7 @@ where the first two digits are the "operation code" and the last two digits are 
 99999         -> sentinel value, makes turing stop taking inputs  
 -99999        -> quit turing  
 ```
-![demo picture](https://github.com/drvladbancila/turing/blob/master/turingdemo1.png)
+![demo picture](turingdemo1.png)
 
 ### Run program from file  
 If you write a program on a file, you can run it in this way:  
