@@ -1,4 +1,5 @@
  // Error codes
+ // In this files we have defined the error codes
 #define INVALID_OP -1
 #define ZERO_DIVISION -2
 #define OVERFLOW -3
